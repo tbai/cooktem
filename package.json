@@ -33,6 +33,10 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
 
+
+    "typescript": "1.8.10",
+    "typings": "0.8.1",
+
 		"cfenv": "1.0.x"
   },
   "devDependencies": {
@@ -61,8 +65,7 @@
     "karma-jasmine": "0.3.8",
     "protractor": "3.3.0",
     "ts-node": "0.5.5",
-    "tslint": "3.11.0",
-    "typescript": "1.8.10",
-    "typings": "0.8.1"
+    "tslint": "3.11.0"
+
   }
 }
