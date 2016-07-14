@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
+
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
+import { SearchComponent } from './search';
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  encapsulation: ViewEncapsulation.None,
+  providers: [HTTP_PROVIDERS],
+  directives: [ROUTER_DIRECTIVES, SearchComponent],
+  styleUrls: ['app.component.css'],
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'app works!';
+
 }

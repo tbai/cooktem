@@ -1,0 +1,40 @@
+/**
+ * ConciseCSS v3.4.0
+ * https://github.com/ConciseCSS/concise.css
+ *
+ * Copyright 2016 James Kolce, Keenan Payne and ConciseCSS Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+// Globals
+@import 'node_modules/concise.css/src/core/globals/globals';
+@import 'node_modules/concise.css/src/core/globals/functions';
+@import 'node_modules/concise.css/src/core/globals/mixins';
+
+// Custom globals
+@import 'shared/variables';
+
+// Natives
+@import 'node_modules/concise.css/src/core/layout/base';
+@import 'node_modules/concise.css/src/core/layout/blockquotes';
+@import 'node_modules/concise.css/src/core/layout/buttons';
+@import 'node_modules/concise.css/src/core/layout/forms';
+@import 'node_modules/concise.css/src/core/layout/headings';
+@import 'node_modules/concise.css/src/core/layout/lists';
+@import 'node_modules/concise.css/src/core/layout/print';
+@import 'node_modules/concise.css/src/core/layout/tables';
+@import 'node_modules/concise.css/src/core/layout/type';
+
+// Utils
+@import 'node_modules/concise.css/src/core/utils/atgrid';
+@import 'node_modules/concise.css/src/core/utils/colors';
+@import 'node_modules/concise.css/src/core/utils/conditional-styling';
+@import 'node_modules/concise.css/src/core/utils/helpers';
+
+// Add-Ons
+@import 'node_modules/concise.css/src/addons/concise-ui/concise-ui';
+
+// Custom styles
+@import 'node_modules/concise.css/src/custom/custom';
