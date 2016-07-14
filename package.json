@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node ./bin/www",
-    "prestart": "ng build -prod",
-    "preinstall": "npm uninstall -g angular-cli",
-    "postinstall": "typings install && npm install -g angular-cli",
+    "start:dev": "node ./node_modules/angular-cli/bin/ng serve",
+    "_prestart": "node ./node_modules/angular-cli/bin/ng build -prod",
+    "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",

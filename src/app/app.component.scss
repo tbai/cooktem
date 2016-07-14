@@ -38,3 +38,8 @@
 
 // Custom styles
 @import 'node_modules/concise.css/src/custom/custom';
+
+
+body {
+  background:getColor(background, light);
+}
