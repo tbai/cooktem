@@ -4,9 +4,10 @@
   "license": "MIT",
   "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "_start": "node ./bin/www",
+    "start": "node ./node_modules/angular-cli/bin/ng build -prod && node ./bin/www",
     "start:dev": "node ./node_modules/angular-cli/bin/ng serve",
-    "prestart": "node ./node_modules/angular-cli/bin/ng build -prod",
+    "_prestart": "node ./node_modules/angular-cli/bin/ng build -prod",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
