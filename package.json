@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "_start": "node ./bin/www",
-    "start": "node ./node_modules/angular-cli/bin/ng build -prod && node ./bin/www",
+    "start": "node ./bin/www",
     "start:dev": "node ./node_modules/angular-cli/bin/ng serve",
-    "_prestart": "node ./node_modules/angular-cli/bin/ng build -prod",
+    "prestart": "node ./node_modules/angular-cli/bin/ng build -prod --watcher=node --verbose",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
