@@ -3,14 +3,14 @@ import { HTTP_PROVIDERS } from '@angular/http';
 
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { SearchComponent } from './search';
+import { SearchComponent } from './search/';
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   encapsulation: ViewEncapsulation.None,
   providers: [HTTP_PROVIDERS],
-  directives: [ROUTER_DIRECTIVES, SearchComponent],
+  directives: [ROUTER_DIRECTIVES],
   styleUrls: ['app.component.css'],
   templateUrl: 'app.component.html'
 })
