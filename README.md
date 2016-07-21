@@ -3,15 +3,11 @@
 Recipe finder sample application built using Angular 2 + Redux + Express + Mongodb.
 The intention is to deploy the finished website in Brazil to find recipes in portuguese. 
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.9.
-
 ## Back-End Development server
 npm run start
 
 ## Front-End Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
 
 ## Build
 
