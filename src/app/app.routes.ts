@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { SearchComponent } from './search/';
-import { RecipeListComponent } from './recipes/';
+import { SearchComponent } from './search/search.component';
+import { RecipeListComponent } from './recipes/recipe-list.component';
 
 export const routes: RouterConfig = [
   { path: '', redirectTo: '/search', terminal: true },

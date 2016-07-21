@@ -13,6 +13,7 @@ export interface SearchAction extends Action {
 }
 
 export const searchRequest:ActionCreator<SearchAction> = function(query:string){
+  console.log("Searcg request action");
   return {
     type: SEARCH_REQUEST,
     query: query,

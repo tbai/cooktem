@@ -7,6 +7,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'redux': 'vendor/redux/dist/redux.min.js'
 };
 
 /** User packages configuration. */

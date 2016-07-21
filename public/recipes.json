@@ -1,0 +1,37 @@
+[
+  {
+    "id": "01",
+    "name": "Bolo de Fubá",
+    "source": "www.fakerecepies.com",
+
+    "ingredients": [
+      "Fubá",
+      "Farinha",
+      "Ovo"
+    ],
+    "preparation": "Coloca tudo junto misturado e reza uma ave maria. "
+  },
+  {
+    "id": "02",
+    "name": "Bolo de Laranja",
+    "source": "www.fakerecepies.com",
+
+    "ingredients": [
+      "Laranja",
+      "Farinha",
+      "Ovo"
+    ],
+    "preparation": "Coloca tudo junto misturado e reza um pai nosso. "
+  },
+  {
+    "id": "03",
+    "name": "Ovo frito",
+    "source": "www.fakerecepies.com/ovofrito",
+
+    "ingredients": [
+      "Azeite",
+      "Ovo"
+    ],
+    "preparation": "Coloca tudo junto misturado e espera ficar pronto. "
+  }
+]

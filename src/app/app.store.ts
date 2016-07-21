@@ -1,27 +1,26 @@
 
-import { Store, Action, createStore, applyMiddleware, Unsubscribe, Reducer } from 'redux';
-import { AppState, initialState } from './';
+import { Store, Action, createStore, Unsubscribe, Reducer } from 'redux';
+import { AppState, initialState } from './app.state';
+import { Injectable } from '@angular/core';
 
-import { Injectable, Inject } from '@angular/core';
-import { RecipeService } from './recipes/';
-import { SearchService } from './search/';
 
 @Injectable()
-class AppStore implements Store<AppState> {
+export class AppStore implements Store<AppState> {
   private store:Store<AppState>;
 
-  constructor(private searchService:SearchService, private recipeService:RecipeService){
-    this.store = createStore(this.rootReducer, initialState);
+  constructor(
+  ){
+    this.store = createStore(this.uselessReducer, initialState);
   }
 
-  private rootReducer(state:AppState, action:Action){
-    return {
-      search: this.searchService.reducer(state.search, action),
-      selectedRecipe: this.recipeService.reducer(state.selectedRecipe, action)
-    };
+  // The appStore loads with a useless reducer without any references
+  // to the services. The real reducer will be added later in
+  // app.component->ngOnInit combining the reducers from our services.
+  private uselessReducer<A extends Action>(state:AppState, action:A) : AppState {
+    return state;
   }
 
-  dispatch(action:Action) {
+  dispatch(action: Action): Action {
     return this.store.dispatch(action);
   }
 
