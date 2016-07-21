@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, forwardRef } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 import { ROUTER_DIRECTIVES, ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -22,28 +22,29 @@ import { AppStore } from '../app.store';
     <router-outlet></router-outlet>
   `
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements AfterViewChecked {
   private sub: Subscription;
 
 
-  formData:any;
+  formData:{query:string};
+
+  searchQuery:string;
 
   constructor(
-    private router: Router,
-    private route:  ActivatedRoute
+    private router:   Router,
+    private route:    ActivatedRoute,
+    private appStore: AppStore
   ) {
+    this.searchQuery = "";
     this.formData = {query:""};
   }
 
-  ngOnInit() {
-
-    this.sub = this.route.params.subscribe(params => {
-      this.formData.query = params['query'];
+  ngAfterViewChecked(){
+    this.appStore.subscribe( () => {
+      this.formData.query = this.appStore.getState().search.query;
     });
-
   }
 
-  // searchClick($event, query:string) {
   searchClick($event) {
     $event.preventDefault();
     $event.stopPropagation();
