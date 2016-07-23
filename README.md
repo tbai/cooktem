@@ -1,5 +1,4 @@
 # Cooktem
-
 Recipe finder sample application built using Angular 2 + Redux + Express + Mongodb.
 The intention is to deploy the finished website in Brazil to find recipes in portuguese. 
 

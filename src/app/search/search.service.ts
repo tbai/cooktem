@@ -22,7 +22,9 @@ export class SearchService {
     this.http.get("recipes.json")
         .map(response => response.json())
         .subscribe(recipes => {
-          this.appStore.dispatch(searchSuccess(recipes));
+          setTimeout(()=>{
+            this.appStore.dispatch(searchSuccess(recipes));
+          }, 500);
         });
   }
 

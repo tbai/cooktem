@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewChecked, EventEmitter, Output} from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 import { ROUTER_DIRECTIVES, ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -11,15 +11,20 @@ import { AppStore } from '../app.store';
   directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES],
   selector: 'search',
   template: `
-    <form>
-      <p>
-        <input #query [(ngModel)]="formData.query"  class="input--large" type="text" placeholder="Ingredientes...">
-      </p>
+  <br><br>
+    <div row >
+      <div column=12>
+        <form class="text--center">
+          <p>
+            <input #query [(ngModel)]="formData.query" class="input--large" type="text" placeholder="Ingredientes...">
+          </p>
 
-      <button class="bg--primary" (click)=searchClick($event)>Buscar Receitas</button>
-    </form>
+          <button #searchButton (click)=searchClick($event) class="bg--primary button--pill">Buscar Receitas</button>
+        </form>
 
-    <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   `
 })
 export class SearchComponent implements AfterViewChecked {
@@ -27,8 +32,10 @@ export class SearchComponent implements AfterViewChecked {
 
 
   formData:{query:string};
-
   searchQuery:string;
+
+  @Output()
+  onSearch = new EventEmitter<string>();
 
   constructor(
     private router:   Router,
@@ -51,6 +58,7 @@ export class SearchComponent implements AfterViewChecked {
 
     if (this.formData.query){
       this.router.navigateByUrl(`/search/${ encodeURIComponent(this.formData.query) }`);
+      this.onSearch.emit(this.formData.query);
     }
   }
 

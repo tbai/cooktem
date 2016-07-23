@@ -1,0 +1,18 @@
+@import 'node_modules/concise.css/src/core/globals/globals';
+@import 'node_modules/concise.css/src/core/globals/functions';
+
+@import '../shared/variables';
+
+
+.card:hover {
+  background-color:getColor(cream, lighter);
+  cursor:pointer;
+
+  $borderColor:getColor(base, primary);;
+  // border-color:$borderColor;
+  // .card-footer {
+  //   border-color:$borderColor;
+  // }
+
+  transition: background-color .1s ease-out;
+}

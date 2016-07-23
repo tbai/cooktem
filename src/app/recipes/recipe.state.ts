@@ -1,5 +1,5 @@
 import { RequestStatus } from '../shared/';
-import { Recipe } from './';
+import { Recipe } from './recipe.model';
 
 export interface RecipeState {
   requestStatus: RequestStatus;

@@ -1,6 +1,6 @@
 
-import { RecipeState, initialRecipeState } from './recipes/';
-import { SearchState, initialSearchState } from './search/';
+import { RecipeState, initialRecipeState } from './recipes/recipe.state';
+import { SearchState, initialSearchState } from './search/search.state';
 
 
 export interface AppState {
