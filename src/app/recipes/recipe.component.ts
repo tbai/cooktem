@@ -4,8 +4,7 @@ import {
   Input
 } from '@angular/core';
 
-import { Inject, forwardRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { Recipe } from './recipe.model';
 import { recipeRequest } from './recipe.actions';
@@ -14,9 +13,24 @@ import { AppStore } from '../app.store';
 @Component({
   moduleId: module.id,
   selector: 'recipe',
+  directives: [ROUTER_DIRECTIVES],
+  styles: [
+    `
+      .back-button .icon {
+        margin-right: 8px;
+        margin-left: -5px;
+      }
+    `
+  ],
   template: `
     <div *ngIf="!recipe" class="spinner"></div>
     <div class="recipe" *ngIf="recipe">
+
+      <a *ngIf="showBackButton()" (click)="goBack()" href="#" class="back-button button button--xsm button--pill bg--muted">
+         <span class="icon">&#8630;</span> Voltar </a>
+
+      <a *ngIf="!showBackButton()" [routerLink]="'/search'" class="back-button button button--xsm button--pill bg--muted">
+         <span class="icon">&#8630;</span> Buscar Receitas </a>
 
       <h1>{{recipe.name}}</h1>
       <hr>
@@ -66,6 +80,14 @@ export class RecipeComponent implements OnInit {
     private appStore : AppStore
   ) {
 
+  }
+
+  showBackButton(){
+    return window.history.length > 2;
+  }
+
+  goBack(){
+    window.history.back();
   }
 
   ngOnInit() {
